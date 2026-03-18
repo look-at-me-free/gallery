@@ -15,12 +15,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     return div.innerHTML;
   };
 
-  const deriveTags = (item) => {
-    const source = normalize(
-      `${item.caption || ""} ${item.alt || ""} ${(item.tags || []).join(" ")}`
-    );
+  const filenameToCaption = (url = "") => {
+    try {
+      const clean = url.split("/").pop()?.split("?")[0] || "";
+      const noExt = clean.replace(/\.[a-zA-Z0-9]+$/, "");
+      return noExt.replace(/[_-]+/g, " ").trim() || "Untitled";
+    } catch {
+      return "Untitled";
+    }
+  };
 
-    const tags = new Set(Array.isArray(item.tags) ? item.tags.map(titleCase) : []);
+  const extractImageUrl = (line = "") => {
+    const trimmed = line.trim();
+    if (!trimmed) return "";
+
+    const srcMatch = trimmed.match(/src="([^"]+)"/i);
+    if (srcMatch) return srcMatch[1];
+
+    if (/^https?:\/\/\S+/i.test(trimmed)) return trimmed;
+
+    return "";
+  };
+
+  const deriveTags = (caption = "") => {
+    const source = normalize(caption);
+    const tags = new Set();
 
     const rules = [
       ["perfect", "Perfection"],
@@ -59,55 +78,57 @@ document.addEventListener("DOMContentLoaded", async () => {
     return Array.from(tags);
   };
 
-  async function loadLinks() {
-    const res = await fetch("./links.json", { cache: "no-store" });
+  async function loadTextFile(path) {
+    const res = await fetch(path, { cache: "no-store" });
     if (!res.ok) {
-      throw new Error(`Could not load links.json (${res.status})`);
+      throw new Error(`Could not load ${path} (${res.status})`);
     }
+    return res.text();
+  }
 
-    const data = await res.json();
+  async function loadItems() {
+    const [linksRaw, captionsRaw] = await Promise.all([
+      loadTextFile("./links.txt"),
+      loadTextFile("./captions.txt").catch(() => "")
+    ]);
 
-    if (!Array.isArray(data)) {
-      throw new Error("links.json must contain an array");
-    }
+    const linkLines = linksRaw.split(/\r?\n/);
+    const captionLines = captionsRaw.split(/\r?\n/);
 
-    return data.map((item, index) => {
-      if (typeof item === "string") {
-        return {
-          id: index,
-          src: item,
-          pageHref: item,
-          caption: `Image ${index + 1}`,
-          alt: `Image ${index + 1}`,
-          tags: ["Unsorted"]
-        };
-      }
+    const items = [];
 
-      const src = item.src || item.image || item.url || "";
-      const caption = item.caption || item.alt || `Image ${index + 1}`;
-      const alt = item.alt || caption;
-      const pageHref = item.pageHref || item.href || src;
+    for (let i = 0; i < linkLines.length; i++) {
+      const rawLinkLine = linkLines[i].trim();
+      if (!rawLinkLine) continue;
 
-      return {
-        id: index,
+      const src = extractImageUrl(rawLinkLine);
+      if (!src) continue;
+
+      const manualCaption = (captionLines[i] || "").trim();
+      const fallbackCaption = filenameToCaption(src);
+      const caption = manualCaption || fallbackCaption;
+
+      items.push({
+        id: items.length,
         src,
-        pageHref,
         caption,
-        alt,
-        tags: deriveTags(item)
-      };
-    }).filter((item) => item.src);
+        alt: caption,
+        tags: deriveTags(caption)
+      });
+    }
+
+    return items;
   }
 
   let items = [];
   try {
-    items = await loadLinks();
+    items = await loadItems();
   } catch (err) {
     document.body.innerHTML = `
       <div style="padding:32px;font-family:Arial,sans-serif;color:white;background:#111;min-height:100vh;">
         <h1 style="margin-bottom:12px;">Could not load gallery</h1>
         <p style="opacity:.8;">${escapeHtml(err.message)}</p>
-        <p style="opacity:.7;margin-top:16px;">Make sure <code>links.json</code> is in the repo root.</p>
+        <p style="opacity:.7;margin-top:16px;">Make sure <code>links.txt</code> and <code>captions.txt</code> are in the repo root.</p>
       </div>
     `;
     return;
@@ -117,7 +138,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.innerHTML = `
       <div style="padding:32px;font-family:Arial,sans-serif;color:white;background:#111;min-height:100vh;">
         <h1 style="margin-bottom:12px;">No images found</h1>
-        <p style="opacity:.8;">Your <code>links.json</code> loaded, but it has no valid image entries.</p>
+        <p style="opacity:.8;">Your <code>links.txt</code> loaded, but no valid image entries were found.</p>
       </div>
     `;
     return;
@@ -158,7 +179,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <button class="gallery-pill gallery-pill-toggle" data-tag="${escapeHtml(tag)}" type="button">
                   ${escapeHtml(tag)}
                 </button>
-                <div class="gallery-pill-menu" data-menu="${escapeHtml(tag)}">
+                <div class="gallery-pill-menu">
                   <div class="gallery-pill-menu-inner">
                     ${items
                       .filter((item) => item.tags.includes(tag))
@@ -198,9 +219,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="gallery-grid" id="gallery-grid"></div>
 
         <div class="gallery-expand-wrap">
-          <button id="gallery-expand-btn" class="gallery-expand-btn" type="button">
-            Expand
-          </button>
+          <button id="gallery-expand-btn" class="gallery-expand-btn" type="button">Expand</button>
         </div>
       </section>
     </div>
@@ -239,7 +258,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   function getFilteredItems() {
     return items.filter((item) => {
       const tagMatch = activeTag === "All" || item.tags.includes(activeTag);
-      const text = normalize(`${item.caption} ${item.alt} ${item.tags.join(" ")}`);
+      const text = normalize(`${item.caption} ${item.tags.join(" ")}`);
       const searchMatch = !searchQuery || text.includes(normalize(searchQuery));
       return tagMatch && searchMatch;
     });
@@ -421,7 +440,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("is-open")) return;
-
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowLeft") stepLightbox(-1);
     if (e.key === "ArrowRight") stepLightbox(1);

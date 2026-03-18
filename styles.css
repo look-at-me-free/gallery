@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page */
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Auto-detect and style container */
+.gallery,
+body {
+  padding: 10px;
+}
+
+/* Turn ALL image links into a grid automatically */
+body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+/* Each image link */
+a[href*="ibb.co"] {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* Images */
+a[href*="ibb.co"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect */
+a[href*="ibb.co"]:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Title overlay (uses alt text) */
+a[href*="ibb.co"]::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  font-size: 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+a[href*="ibb.co"]:hover::after {
+  opacity: 1;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+/* Close hint */
+#lightbox::after {
+  content: "Click anywhere to close";
+  position: absolute;
+  bottom: 20px;
+  font-size: 14px;
+  opacity: 0.6;
+}

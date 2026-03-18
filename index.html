@@ -1,182 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="styles.css">
 <head>
-  <meta charset="UTF-8">
-  <title>My Image Gallery</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-    }
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Gallery Archive</title>
 
-    h1 {
-      text-align: center;
-      padding: 20px;
-    }
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta name="description" content="A curated image archive and gallery viewer." />
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-    .gallery a {
-      display: block;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-  <script src="index.js"></script>
 <body>
+  <div class="page-shell">
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
 
-<h1>Image Collection</h1>
+    <main class="boot-screen" aria-live="polite">
+      <div class="boot-panel">
+        <div class="boot-kicker">Gallery Viewer</div>
+        <h1 class="boot-title">Loading Archive</h1>
+        <p class="boot-copy">
+          Preparing the collection, captions, and browsing interface.
+        </p>
+        <div class="boot-bar">
+          <span class="boot-bar-fill"></span>
+        </div>
+      </div>
+    </main>
 
-<div class="gallery">
-  <!-- Paste your links here -->
-  <a href="https://ibb.co/NdSPks5V"><img src="https://i.ibb.co/nNCvVb9g/wow.png"></a>
-  <a href="https://ibb.co/cSC01cf5"><img src="https://i.ibb.co/YFym37n9/white.png"></a>
-  <a href="https://ibb.co/MxggXXsW"><img src="https://i.ibb.co/S466LLPW/utter-perfection-outdid-myself-HIGHEST-NEW-FORM.png"></a>
-  <a href="https://ibb.co/YBKM1Y9D"><img src="https://i.ibb.co/whbXP3HJ/utter-perfection-NUMBER-1-WINNER.png"></a>
-  <a href="https://ibb.co/q3pPP7Tt"><img src="https://i.ibb.co/ksXWW5NR/the-older-dream.png"></a>
-  <a href="https://ibb.co/gFZrkG66"><img src="https://i.ibb.co/4gRFhcJJ/the-highest-form-200.png"></a>
-  <a href="https://ibb.co/p6FrTPpL"><img src="https://i.ibb.co/6cCJSZ5W/the-dirtiest-of-freaks.png"></a>
-  <a href="https://ibb.co/67ck8g6y"><img src="https://i.ibb.co/B5H9Gq8f/supreme.png"></a>
-  <a href="https://ibb.co/wn5RJW6"><img src="https://i.ibb.co/pHYxWzX/superior.png"></a>
-  <a href="https://ibb.co/604KDFG1"><img src="https://i.ibb.co/9HqxyWBV/selena.png"></a>
-  <a href="https://ibb.co/JWCXfNC8"><img src="https://i.ibb.co/CpWxkqW4/remove-the-tattoo-story-of-young-crime-together.png"></a>
-  <a href="https://ibb.co/397bgjLh"><img src="https://i.ibb.co/VctGfzPB/pump-and-dump.png"></a>
-  <a href="https://ibb.co/JjG5Tb7q"><img src="https://i.ibb.co/60TgSpP8/perfection.png"></a>
-  <a href="https://ibb.co/mrVtDtVp"><img src="https://i.ibb.co/qL39y936/perfection-100-1980s.png"></a>
-  <a href="https://ibb.co/Q3YddMXm"><img src="https://i.ibb.co/JwrQQHCk/PERFECT.png"></a>
-  <a href="https://ibb.co/Kcczrkkm"><img src="https://i.ibb.co/WNNp2wws/outdid-myself.png"></a>
-  <a href="https://ibb.co/wNZrXXhL"><img src="https://i.ibb.co/270YQQ36/number-1.jpg"></a>
-  <a href="https://ibb.co/tPnQmnmL"><img src="https://i.ibb.co/gFQmjQj4/mexico-perfect-skin-and-lower-body.png"></a>
-  <a href="https://ibb.co/Fk8wLJLT"><img src="https://i.ibb.co/HLGzfYf8/maybe-it-gets-bad-sometimes-but-you-dont-see-the-good-parts-beater.png"></a>
-  <a href="https://ibb.co/mKyZQtV"><img src="https://i.ibb.co/4LSvBMn/literal-perfection-highest-form.png"></a>
-  <a href="https://ibb.co/NdSPks5V"><img src="https://i.ibb.co/nNCvVb9g/wow.png" alt="wow" border="0"></a>
-<a href="https://ibb.co/cSC01cf5"><img src="https://i.ibb.co/YFym37n9/white.png" alt="white" border="0"></a>
-<a href="https://ibb.co/MxggXXsW"><img src="https://i.ibb.co/S466LLPW/utter-perfection-outdid-myself-HIGHEST-NEW-FORM.png" alt="utter perfection outdid myself HIGHEST NEW FORM" border="0"></a>
-<a href="https://ibb.co/YBKM1Y9D"><img src="https://i.ibb.co/whbXP3HJ/utter-perfection-NUMBER-1-WINNER.png" alt="utter perfection NUMBER 1 WINNER" border="0"></a>
-<a href="https://ibb.co/q3pPP7Tt"><img src="https://i.ibb.co/ksXWW5NR/the-older-dream.png" alt="the older dream" border="0"></a>
-<a href="https://ibb.co/gFZrkG66"><img src="https://i.ibb.co/4gRFhcJJ/the-highest-form-200.png" alt="the highest form 200" border="0"></a>
-<a href="https://ibb.co/p6FrTPpL"><img src="https://i.ibb.co/6cCJSZ5W/the-dirtiest-of-freaks.png" alt="the dirtiest of freaks" border="0"></a>
-<a href="https://ibb.co/67ck8g6y"><img src="https://i.ibb.co/B5H9Gq8f/supreme.png" alt="supreme" border="0"></a>
-<a href="https://ibb.co/wn5RJW6"><img src="https://i.ibb.co/pHYxWzX/superior.png" alt="superior" border="0"></a>
-<a href="https://ibb.co/604KDFG1"><img src="https://i.ibb.co/9HqxyWBV/selena.png" alt="selena" border="0"></a>
-<a href="https://ibb.co/JWCXfNC8"><img src="https://i.ibb.co/CpWxkqW4/remove-the-tattoo-story-of-young-crime-together.png" alt="remove the tattoo story of young crime together" border="0"></a>
-<a href="https://ibb.co/397bgjLh"><img src="https://i.ibb.co/VctGfzPB/pump-and-dump.png" alt="pump and dump" border="0"></a>
-<a href="https://ibb.co/JjG5Tb7q"><img src="https://i.ibb.co/60TgSpP8/perfection.png" alt="perfection" border="0"></a>
-<a href="https://ibb.co/mrVtDtVp"><img src="https://i.ibb.co/qL39y936/perfection-100-1980s.png" alt="perfection 100 1980s" border="0"></a>
-<a href="https://ibb.co/Q3YddMXm"><img src="https://i.ibb.co/JwrQQHCk/PERFECT.png" alt="PERFECT" border="0"></a>
-<a href="https://ibb.co/Kcczrkkm"><img src="https://i.ibb.co/WNNp2wws/outdid-myself.png" alt="outdid myself" border="0"></a>
-<a href="https://ibb.co/wNZrXXhL"><img src="https://i.ibb.co/270YQQ36/number-1.jpg" alt="number 1" border="0"></a>
-<a href="https://ibb.co/tPnQmnmL"><img src="https://i.ibb.co/gFQmjQj4/mexico-perfect-skin-and-lower-body.png" alt="mexico perfect skin and lower body" border="0"></a>
-<a href="https://ibb.co/Fk8wLJLT"><img src="https://i.ibb.co/HLGzfYf8/maybe-it-gets-bad-sometimes-but-you-dont-see-the-good-parts-beater.png" alt="maybe it gets bad sometimes but you dont see the good parts beater" border="0"></a>
-<a href="https://ibb.co/mKyZQtV"><img src="https://i.ibb.co/4LSvBMn/literal-perfection-highest-form.png" alt="literal perfection highest form" border="0"></a>
-<a href="https://ibb.co/v4q5zj4G"><img src="https://i.ibb.co/GQpwP5QL/insta-nut.png" alt="insta nut" border="0"></a>
-<a href="https://ibb.co/DfdSt9cQ"><img src="https://i.ibb.co/Mkd3scw7/image.jpg" alt="image" border="0"></a>
-<a href="https://ibb.co/PZrkF767"><img src="https://i.ibb.co/6RyQr3W3/image-3.jpg" alt="image (3)" border="0"></a>
-<a href="https://ibb.co/RT4HrR9Z"><img src="https://i.ibb.co/GQ3PYz0B/image-2.jpg" alt="image (2)" border="0"></a>
-<a href="https://ibb.co/dqsg9KM"><img src="https://i.ibb.co/RmGynHb/image-1.jpg" alt="image (1)" border="0"></a>
-<a href="https://ibb.co/sp09gSCS"><img src="https://i.ibb.co/DPxf1XYX/I-m-not-stupid-I-know-what-this-looks-like-I-just-don-t-see-it-the-way-you-do-cheater.png" alt="I m not stupid I know what this looks like I just don t see it the way you do cheater" border="0"></a>
-<a href="https://ibb.co/KpN0M8PR"><img src="https://i.ibb.co/jPV6cjNB/hot-af-cuz-shes-ugly-and-her-body-is-banging.png" alt="hot af cuz shes ugly and her body is banging" border="0"></a>
-<a href="https://ibb.co/SDyWQ7tY"><img src="https://i.ibb.co/4wt9sg8v/highest-form-of-mexican-aesthetic-perfection.png" alt="highest form of mexican aesthetic perfection" border="0"></a>
-<a href="https://ibb.co/fYbMxJ7p"><img src="https://i.ibb.co/VWdVq68S/He-never-meant-to-hurt-me-you-dont-understand-how-it-happened.png" alt="He never meant to hurt me you dont understand how it happened" border="0"></a>
-<a href="https://ibb.co/mWLvyZz"><img src="https://i.ibb.co/6C3vt9s/friends-dirty-mom.png" alt="friends dirty mom" border="0"></a>
-<a href="https://ibb.co/5WvtmmgC"><img src="https://i.ibb.co/jvGBmmPq/foundational.png" alt="foundational" border="0"></a>
-<a href="https://ibb.co/zHjTffyk"><img src="https://i.ibb.co/Hp1fggWJ/f7117103-caa0-45c5-bac5-4500d4f8701c.png" alt="f7117103 caa0 45c5 bac5 4500d4f8701c" border="0"></a>
-<a href="https://ibb.co/WWS8whPF"><img src="https://i.ibb.co/BV8Wxprj/f6955603-ae0d-4a17-aba8-63de6e091f32.png" alt="f6955603 ae0d 4a17 aba8 63de6e091f32" border="0"></a>
-<a href="https://ibb.co/nHYBgQd"><img src="https://i.ibb.co/MYtf2Pw/f945ad4c-1090-46d5-9d68-7ccdf84fe5ae.png" alt="f945ad4c 1090 46d5 9d68 7ccdf84fe5ae" border="0"></a>
-<a href="https://ibb.co/CpJzsgvH"><img src="https://i.ibb.co/Q78fjLnK/f0d30d13-a48b-4e1d-af5c-c28ff1bf0664.png" alt="f0d30d13 a48b 4e1d af5c c28ff1bf0664" border="0"></a>
-<a href="https://ibb.co/bg5Q8FW9"><img src="https://i.ibb.co/0jymdKDb/ef5b9386-6be6-4fa5-b0bf-2a1ceff6035f.png" alt="ef5b9386 6be6 4fa5 b0bf 2a1ceff6035f" border="0"></a>
-<a href="https://ibb.co/N6fD70Lj"><img src="https://i.ibb.co/4ZCvJbjT/e7541045-bbcd-4da3-8250-ee0368af34b6.png" alt="e7541045 bbcd 4da3 8250 ee0368af34b6" border="0"></a>
-<a href="https://ibb.co/x8GK2mcc"><img src="https://i.ibb.co/tPcwHZNN/e9f86ac3-2a3e-4a3c-b90e-6a33098b729b.png" alt="e9f86ac3 2a3e 4a3c b90e 6a33098b729b" border="0"></a>
-<a href="https://ibb.co/TMQgHvX0"><img src="https://i.ibb.co/60KW4nht/dfdb824f-482f-40f4-a7bd-acd3d97da177.png" alt="dfdb824f 482f 40f4 a7bd acd3d97da177" border="0"></a>
-<a href="https://ibb.co/xKn0kBKG"><img src="https://i.ibb.co/0p0S76pZ/dfdb824f-482f-40f4-a7bd-acd3d97da177-1.png" alt="dfdb824f 482f 40f4 a7bd acd3d97da177 (1)" border="0"></a>
-<a href="https://ibb.co/LX3LcqSS"><img src="https://i.ibb.co/q3vtc4BB/d6dbbc09-87b2-465f-88d3-fdf7cd48c406.png" alt="d6dbbc09 87b2 465f 88d3 fdf7cd48c406" border="0"></a>
-<a href="https://ibb.co/JjzpNj6Y"><img src="https://i.ibb.co/fdCNbd63/d3c814f4-e804-4951-9fc3-4a59d72cf96f.png" alt="d3c814f4 e804 4951 9fc3 4a59d72cf96f" border="0"></a>
-<a href="https://ibb.co/VYL9HB80"><img src="https://i.ibb.co/r2Q0byJK/corner-stone.png" alt="corner stone" border="0"></a>
-<a href="https://ibb.co/tT9jCqXj"><img src="https://i.ibb.co/zTz9fXJ9/ccf3d4a6-10a3-4c1a-acc1-ab6e617fdebf.png" alt="ccf3d4a6 10a3 4c1a acc1 ab6e617fdebf" border="0"></a>
-<a href="https://ibb.co/whpJMmbF"><img src="https://i.ibb.co/9Hyws5fk/beyond-perfect-new-standard.png" alt="beyond perfect new standard" border="0"></a>
-<a href="https://ibb.co/35TkgCqq"><img src="https://i.ibb.co/vCcD0jGG/bet-you-that-pussy-is-warm-and-her-house-feels-safe.png" alt="bet you that pussy is warm and her house feels safe" border="0"></a>
-<a href="https://ibb.co/ZzpT5kxd"><img src="https://i.ibb.co/9HkY6CWn/bc872681-85f1-4557-89a7-26c9b90e3fe8.png" alt="bc872681 85f1 4557 89a7 26c9b90e3fe8" border="0"></a>
-<a href="https://ibb.co/TMVZ89vt"><img src="https://i.ibb.co/LdLMtVk1/b695fc40-3f35-4561-882f-fde6defe7894.png" alt="b695fc40 3f35 4561 882f fde6defe7894" border="0"></a>
-<a href="https://ibb.co/PsF4dcXS"><img src="https://i.ibb.co/BHcj9yW1/b695fc40-3f35-4561-882f-fde6defe7894-1.png" alt="b695fc40 3f35 4561 882f fde6defe7894 (1)" border="0"></a>
-<a href="https://ibb.co/cctdDHKq"><img src="https://i.ibb.co/zhbwGYWd/afb64e01-0274-4b97-9f2d-ca72715d0f36.png" alt="afb64e01 0274 4b97 9f2d ca72715d0f36" border="0"></a>
-<a href="https://ibb.co/QjtM5nT3"><img src="https://i.ibb.co/wrj4vCPF/ac7a51cf-9f7c-4376-bcd9-3f45c6f7857e.png" alt="ac7a51cf 9f7c 4376 bcd9 3f45c6f7857e" border="0"></a>
-<a href="https://ibb.co/bM1hJLQC"><img src="https://i.ibb.co/yc0TS5dZ/abaa68b0-85fd-4c72-a37b-c5b0291151c4.png" alt="abaa68b0 85fd 4c72 a37b c5b0291151c4" border="0"></a>
-<a href="https://ibb.co/SX2htvK1"><img src="https://i.ibb.co/4Zc68NjD/85714780-0b60-470a-9222-9c9a7381fa46.png" alt="85714780 0b60 470a 9222 9c9a7381fa46" border="0"></a>
-<a href="https://ibb.co/Ck55V9g"><img src="https://i.ibb.co/ywnngkt/885514f3-48a0-4457-b9a7-25ab50818fff.png" alt="885514f3 48a0 4457 b9a7 25ab50818fff" border="0"></a>
-<a href="https://ibb.co/8D0HrkWM"><img src="https://i.ibb.co/DDtZ9dx4/774075a8-388c-4d47-8c32-d86dee8ed19b.png" alt="774075a8 388c 4d47 8c32 d86dee8ed19b" border="0"></a>
-<a href="https://ibb.co/d4z2hfjT"><img src="https://i.ibb.co/hFtWqgL6/708529a3-891f-439a-b314-37c111e6a464.png" alt="708529a3 891f 439a b314 37c111e6a464" border="0"></a>
-<a href="https://ibb.co/0VFhrHYV"><img src="https://i.ibb.co/6J1gFjDJ/405010b6-75d0-4761-872e-cea4153ab85f.png" alt="405010b6 75d0 4761 872e cea4153ab85f" border="0"></a>
-<a href="https://ibb.co/355rMDTP"><img src="https://i.ibb.co/GffxtKdr/93260f02-134f-4043-a693-de080e7ae8a0.png" alt="93260f02 134f 4043 a693 de080e7ae8a0" border="0"></a>
-<a href="https://ibb.co/b5HmgzmV"><img src="https://i.ibb.co/whJgNMgq/89006d7d-4194-43dd-9133-954bd5edfbfd.png" alt="89006d7d 4194 43dd 9133 954bd5edfbfd" border="0"></a>
-<a href="https://ibb.co/zT7jnX7J"><img src="https://i.ibb.co/9kVz8bVt/79756bfc-f781-4cf5-87bd-6dabe6847c3c.png" alt="79756bfc f781 4cf5 87bd 6dabe6847c3c" border="0"></a>
-<a href="https://ibb.co/gMNN3PjC"><img src="https://i.ibb.co/0jTTcFD3/74979b79-b420-4032-b0d6-858acb53c6e1.png" alt="74979b79 b420 4032 b0d6 858acb53c6e1" border="0"></a>
-<a href="https://ibb.co/gM1cfBrn"><img src="https://i.ibb.co/Y79V1qNr/64697ad2-954a-4880-ad91-c13d9399d121.png" alt="64697ad2 954a 4880 ad91 c13d9399d121" border="0"></a>
-<a href="https://ibb.co/BHgYfNsD"><img src="https://i.ibb.co/4wj0FdNy/48700e02-c6ec-4780-b75d-dcc0f21756c0.png" alt="48700e02 c6ec 4780 b75d dcc0f21756c0" border="0"></a>
-<a href="https://ibb.co/Jhm4916"><img src="https://i.ibb.co/gnmpx2q/8423efb0-97c6-4a57-a0e5-2c84c40521cd.png" alt="8423efb0 97c6 4a57 a0e5 2c84c40521cd" border="0"></a>
-<a href="https://ibb.co/gbjsP2T9"><img src="https://i.ibb.co/NgVwmvjC/6353adf3-9136-4728-b901-73db3def8169.png" alt="6353adf3 9136 4728 b901 73db3def8169" border="0"></a>
-<a href="https://ibb.co/qMkSqrbs"><img src="https://i.ibb.co/VW21nqXS/947b1734-4c44-43d0-abc9-e8c21d909ef6.png" alt="947b1734 4c44 43d0 abc9 e8c21d909ef6" border="0"></a>
-<a href="https://ibb.co/9kz33fHQ"><img src="https://i.ibb.co/KpRzzQxT/937de299-eb63-4eaf-8e1e-71b99e78c167.png" alt="937de299 eb63 4eaf 8e1e 71b99e78c167" border="0"></a>
-<a href="https://ibb.co/3mRRhNDv"><img src="https://i.ibb.co/hFYY8WPc/924f0fcc-9444-4ba2-8385-f42dae288ca8.png" alt="924f0fcc 9444 4ba2 8385 f42dae288ca8" border="0"></a>
-<a href="https://ibb.co/CpH1b8ch"><img src="https://i.ibb.co/Y4LRcQCp/445be9a8-1e5b-47aa-8390-8989d6072634.png" alt="445be9a8 1e5b 47aa 8390 8989d6072634" border="0"></a>
-<a href="https://ibb.co/PZQbkYJM"><img src="https://i.ibb.co/27NLJ6RS/100.png" alt="100" border="0"></a>
-<a href="https://ibb.co/SwqV6p6Z"><img src="https://i.ibb.co/8gFPmVmQ/70f691d8-6f65-41a4-9c36-3bcdcda733b4.png" alt="70f691d8 6f65 41a4 9c36 3bcdcda733b4" border="0"></a>
-<a href="https://ibb.co/NdrH7Srf"><img src="https://i.ibb.co/S4c9JrcH/62dfbb57-bdd4-4b74-bd32-83683048c28d.png" alt="62dfbb57 bdd4 4b74 bd32 83683048c28d" border="0"></a>
-<a href="https://ibb.co/pjBzB9Bb"><img src="https://i.ibb.co/hFJWJtJL/35ef0dd4-6a48-4cce-a44f-8b6dfa51e571.png" alt="35ef0dd4 6a48 4cce a44f 8b6dfa51e571" border="0"></a>
-<a href="https://ibb.co/GvZDBd8p"><img src="https://i.ibb.co/TBQGpw72/17ea4718-8618-46f6-bcb5-b9a95b26b199.png" alt="17ea4718 8618 46f6 bcb5 b9a95b26b199" border="0"></a>
-<a href="https://ibb.co/zT1LfYfW"><img src="https://i.ibb.co/v6brzGzC/10out10.jpg" alt="10out10" border="0"></a>
-<a href="https://ibb.co/TMcdnNSk"><img src="https://i.ibb.co/YB2wKVM3/10-shota-milf.png" alt="10 shota milf" border="0"></a>
-<a href="https://ibb.co/bgGqBZFm"><img src="https://i.ibb.co/WWRqyw05/10.jpg" alt="10" border="0"></a>
-<a href="https://ibb.co/svV70tdy"><img src="https://i.ibb.co/RpD8x7kz/9c2ecf6f-91c6-4430-bb3e-5e9d61e1b515.png" alt="9c2ecf6f 91c6 4430 bb3e 5e9d61e1b515" border="0"></a>
-<a href="https://ibb.co/Ps1Tmcyg"><img src="https://i.ibb.co/HLGNFtyq/8d9576b6-dfc3-4595-a07d-d535a2ee93f6.png" alt="8d9576b6 dfc3 4595 a07d d535a2ee93f6" border="0"></a>
-<a href="https://ibb.co/G3tbgVhF"><img src="https://i.ibb.co/M5G3qRX9/8cd0946a-f5a1-4e65-8b2f-4d8693a4a1f1.png" alt="8cd0946a f5a1 4e65 8b2f 4d8693a4a1f1" border="0"></a>
-<a href="https://ibb.co/3574NZWD"><img src="https://i.ibb.co/BHtcZMjX/8cae546d-4cce-4c4d-8e7a-44e91c67b71e.png" alt="8cae546d 4cce 4c4d 8e7a 44e91c67b71e" border="0"></a>
-<a href="https://ibb.co/gbdTWNCp"><img src="https://i.ibb.co/NgrjN5zP/8a1eda74-d842-4056-a5a0-8402f5088972.png" alt="8a1eda74 d842 4056 a5a0 8402f5088972" border="0"></a>
-<a href="https://ibb.co/d46y2SDr"><img src="https://i.ibb.co/TMR58Ztk/7c0c2fd2-69cd-4d0c-9884-c00b37b12156.png" alt="7c0c2fd2 69cd 4d0c 9884 c00b37b12156" border="0"></a>
-<a href="https://ibb.co/8nkmHqK9"><img src="https://i.ibb.co/Q70J4LbM/07e716d6-85ee-4743-acf0-f0c7bdab7830.png" alt="07e716d6 85ee 4743 acf0 f0c7bdab7830" border="0"></a>
-<a href="https://ibb.co/3m1GbvMx"><img src="https://i.ibb.co/VYVrGxQF/5efa4cf3-c401-4a7a-8c3f-dacd5bdde487.png" alt="5efa4cf3 c401 4a7a 8c3f dacd5bdde487" border="0"></a>
-<a href="https://ibb.co/67NKwN2d"><img src="https://i.ibb.co/Vc3F93dK/6fe5905f-2ec0-4e89-ab3c-750353a8084e.png" alt="6fe5905f 2ec0 4e89 ab3c 750353a8084e" border="0"></a>
-<a href="https://ibb.co/Gfz9626q"><img src="https://i.ibb.co/4wh2qTqH/image-3.jpg" alt="image (3)" border="0"></a>
-<a href="https://ibb.co/fY62XV1S"><img src="https://i.ibb.co/xS9D2KCs/our-beautiful-future.png" alt="our beautiful future" border="0"></a>
-<a href="https://ibb.co/nZJ49Z5"><img src="https://i.ibb.co/NQBf5QH/zdfdfz.jpg" alt="zdfdfz" border="0"></a>
-<a href="https://ibb.co/GfWtnYqj"><img src="https://i.ibb.co/20vsWVTB/66388e8d-0ce6-46f7-a2b8-09d4f8b47572.png" alt="66388e8d 0ce6 46f7 a2b8 09d4f8b47572" border="0"></a>
-<a href="https://ibb.co/dJsDH9VJ"><img src="https://i.ibb.co/4gwp0yXg/068f1059-9d58-47a8-a22f-02b456b87235.png" alt="068f1059 9d58 47a8 a22f 02b456b87235" border="0"></a>
-<a href="https://ibb.co/PGpXk03c"><img src="https://i.ibb.co/xqv9ZdP1/e255e033-eb2b-4d0f-a235-c89e966d6408.png" alt="e255e033 eb2b 4d0f a235 c89e966d6408" border="0"></a>
-<a href="https://ibb.co/4ggCLCWD"><img src="https://i.ibb.co/yBBKCK0M/d58e2bb6-d1be-439c-9b24-05ea85c2ef3d.png" alt="d58e2bb6 d1be 439c 9b24 05ea85c2ef3d" border="0"></a>
-<a href="https://ibb.co/YBhCLx8D"><img src="https://i.ibb.co/F4zrDFJs/45557f05-7b8a-4b4e-a21d-a951de4a2720.png" alt="45557f05 7b8a 4b4e a21d a951de4a2720" border="0"></a>
-<a href="https://ibb.co/B5Rxxqv8"><img src="https://i.ibb.co/v68GGZf2/by-the-lake.png" alt="by the lake" border="0"></a>
-<a href="https://ibb.co/8g6gN9nb"><img src="https://i.ibb.co/HTnTBqLC/P0.jpg" alt="P0" border="0"></a>
-<a href="https://ibb.co/s9f14zFG"><img src="https://i.ibb.co/7tfpDLG5/maxresdefault.jpg" alt="maxresdefault" border="0"></a>
-<a href="https://ibb.co/1fKSTybj"><img src="https://i.ibb.co/BVj1BWwF/IMG-3600-2.webp" alt="IMG-3600-2" border="0"></a>
-<a href="https://ibb.co/1YwvyVyg"><img src="https://i.ibb.co/bj8Wwhw0/il-fullxfull-4981963797-tinl.webp" alt="il-fullxfull-4981963797-tinl" border="0"></a>
-<a href="https://ibb.co/Ng4rjHVw"><img src="https://i.ibb.co/kVdJ8WHY/il-1140x-N-4198097645-801z.webp" alt="il-1140x-N-4198097645-801z" border="0"></a>
-<a href="https://ibb.co/N5dV1tX"><img src="https://i.ibb.co/329rf4w/free-Chicken-crochet-pattern-1.jpg" alt="free-Chicken-crochet-pattern-1" border="0"></a>
-<a href="https://ibb.co/srq2pgb"><img src="https://i.ibb.co/v8kHCcV/DM-7-329abc23-22ee-479b-ad06-e42c330a7e25.webp" alt="DM-7-329abc23-22ee-479b-ad06-e42c330a7e25" border="0"></a>
-<a href="https://ibb.co/j9cT6R3d"><img src="https://i.ibb.co/BHXtzNTm/b733b86e9a1d5cd56085fdf2590c3c76.jpg" alt="b733b86e9a1d5cd56085fdf2590c3c76" border="0"></a>
-<a href="https://ibb.co/pBBQMfKd"><img src="https://i.ibb.co/jPPzQywD/crochet-elephant-3-1024x768.jpg" alt="crochet-elephant-3-1024x768" border="0"></a>
-<a href="https://ibb.co/sTry3cy"><img src="https://i.ibb.co/f3740Z4/257994ade4809148571dd1d4ab6f3c30.jpg" alt="257994ade4809148571dd1d4ab6f3c30" border="0"></a>
-<a href="https://ibb.co/qF5K9CkG"><img src="https://i.ibb.co/k61j0JQn/16cc7c65fa0d31a8d5e016f65313a9d8.jpg" alt="16cc7c65fa0d31a8d5e016f65313a9d8" border="0"></a>
-<a href="https://ibb.co/5hFhkBWQ"><img src="https://i.ibb.co/hFfFcDRG/formymuse.png" alt="formymuse" border="0"></a>
-</div>
+    <noscript>
+      <div class="no-js-warning">
+        This gallery needs JavaScript enabled to load images from
+        <code>links.txt</code> and optional captions from <code>captions.txt</code>.
+      </div>
+    </noscript>
+  </div>
 
+  <script src="index.js"></script>
 </body>
 </html>
